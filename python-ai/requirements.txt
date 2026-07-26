@@ -8,3 +8,6 @@ python-dotenv
 google-generativeai
 rasterio
 shapely
+openmeteo-requests
+requests-cache
+retry-requests
