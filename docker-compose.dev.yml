@@ -1,0 +1,43 @@
+version: '3.9'
+
+# Development overrides — run with:
+# docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  backend:
+    build:
+      context: ./backend
+      target: base                  # use base image, not production runner
+    command: ["npx", "nodemon", "src/server.js"]
+    environment:
+      NODE_ENV: development
+      LOG_LEVEL: debug
+    volumes:
+      - ./backend/src:/app/src:ro   # hot-reload source
+    ports:
+      - "5000:5000"
+      - "9229:9229"                 # Node.js debugger
+
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    command: ["npm", "run", "dev"]
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"
+
+  # pgAdmin for database inspection
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL:    admin@ngo.org
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    networks:
+      - ngo_net

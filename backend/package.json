@@ -1,0 +1,44 @@
+{
+  "name": "ngo-resource-backend",
+  "version": "1.0.0",
+  "description": "Smart Resource Allocation System for NGOs - Backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "setup": "node src/utils/dbSetup.js",
+    "migrate": "node src/utils/dbSetup.js",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "aws-sdk": "^2.1693.0",
+    "axios": "^1.18.1",
+    "bcrypt": "^6.0.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
+    "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1",
+    "openai": "^6.49.0",
+    "pg": "^8.13.1",
+    "socket.io": "^4.8.1",
+    "twilio": "^5.5.0",
+    "uuid": "^11.0.3",
+    "winston": "^3.17.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "eslint": "^9.15.0",
+    "nodemon": "^3.1.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

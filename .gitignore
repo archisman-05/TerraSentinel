@@ -1,0 +1,30 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules/
+.next/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Docker
+docker/ssl/
+
+# Testing
+coverage/
+.nyc_output/

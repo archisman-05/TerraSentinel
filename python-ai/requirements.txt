@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+requests
+numpy
+opencv-python
+pillow
+python-dotenv
+google-generativeai
+rasterio
+shapely
